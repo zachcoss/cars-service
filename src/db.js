@@ -35,17 +35,6 @@ const
             Id: '1i3xjRllc',
         },
         {
-            Make: 'Toyota',
-            Model: 'Rav4',
-            Package: 'XSE',
-            Color: 'Red',
-            Year: '2018',
-            Category: 'SUV',
-            Mileage: 24001,
-            Price: 2275000,
-            Id: '1i3xjRllc',
-        },
-        {
             Make: 'Ford',
             Model: 'Bronco',
             Package: 'Badlands',
