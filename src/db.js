@@ -63,7 +63,7 @@ module.exports.listCars = async function () {
 }
 module.exports.getCar = async function (carId) {
     const carSearch = _.filter(cars, (car) => {
-        return car.id === carId
+        return car.Id === carId
     })
 
     if (!_.size(carSearch)) return {}

@@ -1,27 +1,33 @@
 const 
-    _ = require('lodash');
+    _ = require('lodash'),
+    CarsService = require('../db');
 
 module.exports = {
     validate: function(req, res) {
-
-        return payload
+        if (!req.params.id || !_.isString(req.params.id)) throw new Error('Missing or incorrect car id.')
+        return { id } = req.params
     },
     request: async function(payload) {
         try {
-
-            // Await Cars-DB
-
-            return payload
+            const car = await CarsService.getCar(payload.id)
+            return car
         } catch(err) {
             throw new Error(err.message)
         }
     },
-    response: function(request, res) {
-
-        return res.status(200).send(response)
+    response: function(response, res) {
+        return res.status(200).send({
+            data: response,
+            error: false,
+            errorMessage: '',
+        })
     },
     error: function(err, res) {
         console.log('Cars Get Car error', err)
-        return res.status(400).send(err.message)
+        return res.status(400).send({
+            data: {},
+            error: true,
+            errorMessage: err.message,
+        })
     },
 }
